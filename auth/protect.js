@@ -1,16 +1,17 @@
+// auth/protect.js
 const isLoggedIn = (req, res, next) => {
-  const { id_verifikator } = req.session;
+  const { userId, username } = req.session.userData;
+  console.log('protectRoute - Sesi saat ini:', { userId, username });
 
-  if (id_verifikator) {
-    // Pengguna sudah login, lanjutkan ke halaman yang diminta
-    next();
+  if (userId && username) {
+    req.user = { userId, username };
+    return next();
   } else {
-    // Pengguna belum login, redirect ke halaman login atau halaman yang ditentukan
-    const redirectUrl = req.query.redirect || "/login-pertamina";
-    res.redirect(redirectUrl);
+    // req.flash('error', 'Anda harus login untuk mengakses halaman ini.');
+    return res.redirect('/login-pertamina');
   }
 };
 
 module.exports = {
-  isLoggedIn,
+  isLoggedIn
 };

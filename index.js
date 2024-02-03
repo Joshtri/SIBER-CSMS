@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const ejs = require('ejs');
 const bodyParser = require('body-parser')
 const session = require ('express-session')
 const redis = require('redis')
@@ -19,29 +18,17 @@ const client = redis.createClient({
 (async () => { await client.connect(); })()
 
 
-const database = require('./utils/database');
+const connectDB = require('./utils/dbConfig');
 const app = express();
 const PORT = process.env.PORT;
 
   
-// // menggunakan express-session
-// app.use(
-//   session({
-//     secret: "secretprogramming",
-//     resave: false,
-//     // secure: true,
-//     saveUninitialized: false,
 
+// import router in app.js
+const routerBeranda = require('./router/dashboard');
+const routerMitra = require('./router/mitra');
+const routerLogin = require('./router/login');
 
-//     cookie: {
-//       maxAge: 1000 * 60 * 60 * 24, // 1 hari
-//       // httpOnly: true,
-//       // sameSite: 'Lax', // Sesuaikan dengan kebutuhan Anda
-//       secure: true, // Hanya dikirimkan melalui HTTPS
-//     },
-    
-//   })
-// );
 
 // Express Session
 app.use(
@@ -50,7 +37,7 @@ app.use(
     secret: 'secret',
     resave: false,
     saveUninitialized: true,
-    name: 'Siber_CSMS_LIMAU_FIELD',
+    name: 'SiberCSMS',
     store: new RedisStore({ 
       client: client,
       ttl: 3600, // waktu kadaluwarsa dalam detik (misalnya 1 jam)
@@ -64,7 +51,7 @@ app.use(
 
 
 app.use(cors({ credentials: true, origin: '*' }))
-database;
+connectDB();
 
 app.use(morgan('tiny'));
 
@@ -74,11 +61,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// import router in app.js
-const routerBeranda = require('./router/beranda');
-const routerMitra = require('./router/mitra');
-
-app.use("/", routerBeranda, routerMitra);
+app.use("/", routerBeranda, routerMitra, routerLogin);
 
 // app.use("/", routerMitra)
 

@@ -3,7 +3,7 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 
 const multer = require("multer")
-const db = require('../utils/database');
+const db = require('../utils/dbConfig');
 
 
 const storage = multer.diskStorage({
