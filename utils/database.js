@@ -5,6 +5,9 @@ const db = mysql.createConnection({
     user: "uhwc7dnlccad96jy", //local pc .
     password:"uvznVcwfcyZSJ828Fb7t",
     database: "banbqbykaghzzrsqrdei",
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
 db.connect(function(err,results){
