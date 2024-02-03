@@ -64,7 +64,7 @@ app.use(
 
 
 app.use(cors({ credentials: true, origin: '*' }))
-database.connect();
+database;
 
 app.use(morgan('tiny'));
 
