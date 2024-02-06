@@ -3,3 +3,4 @@ package-lock.json
 front-end-temp
 package-npm.txt
 uploads
+.env

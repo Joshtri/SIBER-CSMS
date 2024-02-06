@@ -28,6 +28,7 @@ const PORT = process.env.PORT;
 const routerBeranda = require('./router/dashboard');
 const routerMitra = require('./router/mitra');
 const routerLogin = require('./router/login');
+const routerHSEPlan = require("./router/hseplan");
 
 
 // Express Session
@@ -61,7 +62,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", routerBeranda, routerMitra, routerLogin);
+app.use("/", routerBeranda, routerMitra, routerLogin, routerHSEPlan );
 
 // app.use("/", routerMitra)
 

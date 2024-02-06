@@ -25,7 +25,7 @@ router.get('/form-pengusulan-data-mitra', mitraController.formMitra);
 // });
 
 
-router.post('/post-data-hse',upload.array('files', 8), mitraController.postFormHSEPlan);
+// router.post('/post-data-hse',upload.array('files', 8), mitraController.postFormHSEPlan);
 router.post('/post-data-psb', upload.array('files', 8), mitraController.postPSBForm);
 router.post('/post-data-pb', upload.array('files', 8), mitraController.postPBForm);
 router.post('/post-data-pa',upload.array('files', 8), mitraController.postPAForm);

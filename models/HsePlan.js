@@ -67,15 +67,15 @@ const HSEPlanSchema = new mongoose.Schema({
   },
   nilai_total: {
     type: Number,
-    required: false,
+
   },
   fungsi_dituju1: {
     type: String,
-    required: false,
+
   },
   keterangan_verifikasi: {
     type: String,
-    required: false,
+
   },
   status_mitra: {
     type: String,

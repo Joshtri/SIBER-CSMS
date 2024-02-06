@@ -260,7 +260,7 @@
 
         <!-- form Usulan HSE -->
         <div class="col-lg-7 mt-5 pt-5 mt-lg-0 mx-auto d-flex align-items-stretch" >
-          <form action="/post-data-hse" id="hsePlanForm" href="" method="POST" class="php-email-form hidden" enctype="multipart/form-data">
+          <form action="/postHSEPlan" id="hsePlanForm" href="#" method="POST" class="php-email-form hidden" enctype="multipart/form-data">
             <h3>Data Usulan HSE PLAN</h3>
             <hr>
 
@@ -317,16 +317,6 @@
               <input data-bs-toggle="tooltip" data-bs-title="Keterangan : Isi Lokasi Kerja" type="text" class="form-control custom-tooltip" name="lokasi_kerja" id="lokasi_kerja" required> 
             </div>
 
-
-
-
-
-
-            <!-- <div class="my-3">
-              <div class="loading">Tanggal Audit</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div> -->
 
             <hr>
             <!-- * berkas HSE PLAN -->
@@ -507,12 +497,7 @@
               <label for="name" class="text-capitalize">Pilih Fungsi yang Dituju</label>
               <div class="radio-group" style="font-size: 12px;">
                  <div class="row">
-                    <% fungsi_pertamina.forEach(fungsi => { %>
-                       <label class="radio-container">
-                          <input type="radio" name="fungsi_dituju2" value="<%= fungsi.id_fungsi %>" required>
-                          <span class="checkmark"></span> <%= fungsi.nama_fungsi %>
-                       </label>
-                    <% }); %>
+                    <!-- Hapus SEMENTARA -->
                  </div>
               </div>
               <small class="form-text text-muted d-block mt-2">*) Pilih fungsi yang sesuai dengan berkas</small>
@@ -569,12 +554,6 @@
               <input type="file" class="form-control" accept=".pdf" name="files" required>
               <div class="form-text" id="basic-addon4">* File PDF ( ukuran file maksimal 3 Mb).</div>
             </div>
-
-            <!-- <div class="my-3">
-              <div class="loading">Tanggal Audit</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div> -->
 
             <div class="text-center">
               <button type="submit" class="btn-green">Kirim</button>
@@ -696,12 +675,7 @@
               <label for="name" class="text-capitalize">Pilih Fungsi yang Dituju</label>
               <div class="radio-group" style="font-size: 12px;">
                  <div class="row">
-                    <% fungsi_pertamina.forEach(fungsi => { %>
-                       <label class="radio-container">
-                          <input type="radio" name="fungsi_dituju2" value="<%= fungsi.id_fungsi %>" required>
-                          <span class="checkmark"></span> <%= fungsi.nama_fungsi %>
-                       </label>
-                    <% }); %>
+                      <!-- dihapus SEMENTARA -->
                  </div>
               </div>
               <small class="form-text text-muted d-block mt-2">*) Pilih fungsi yang sesuai dengan berkas</small>
@@ -871,12 +845,7 @@
               <label for="name" class="text-capitalize">Pilih Fungsi yang Dituju</label>
               <div class="radio-group" style="font-size: 12px;">
                  <div class="row">
-                    <% fungsi_pertamina.forEach(fungsi => { %>
-                       <label class="radio-container">
-                          <input type="radio" name="fungsi_dituju2" value="<%= fungsi.id_fungsi %>" required>
-                          <span class="checkmark"></span> <%= fungsi.nama_fungsi %>
-                       </label>
-                    <% }); %>
+                      <!-- Hapus SEMENTARA -->
                  </div>
               </div>
               <small class="form-text text-muted d-block mt-2">*) Pilih fungsi yang sesuai dengan berkas</small>
